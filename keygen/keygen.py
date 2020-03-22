@@ -30,7 +30,9 @@ class MainBox:
         return box
 
     def _create_banner(self, box):
-        banner = Gtk.Image.new_from_file("./image/banner.png")
+        banner = Gtk.Image.new_from_file(
+            os.path.join(os.path.dirname(__file__), '../image/banner.png')
+        )
         box.add(banner)
 
     def _create_serial_label(self, box):
@@ -109,7 +111,9 @@ class MainBox:
 class Keygen:
     def _start_music(self):
         pygame.mixer.init()
-        pygame.mixer.music.load("./music/music.mp3")
+        pygame.mixer.music.load(
+            os.path.join(os.path.dirname(__file__), '../music/music.mp3')
+        )
         pygame.mixer.music.play()
 
     def _create_window(self):
